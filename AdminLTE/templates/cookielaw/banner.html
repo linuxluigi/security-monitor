@@ -1,0 +1,12 @@
+{% load i18n mezzanine_tags %}
+<div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+  <div id="CookielawBanner">
+      <div class="container">
+          <h6>{{settings.COOKIE_LAW_HEADER}}</h6>
+          <p>
+              <a class="btn btn-success pull-right" href="javascript:Cookielaw.createCookielawCookie();">{{settings.COOKIE_LAW_BUTTON}}</a>
+              {{settings.COOKIE_LAW_CONTENT}} <a class="btn-xs btn-info" href="{{settings.COOKIE_LAW_PRIVACY}}">{{settings.COOKIE_LAW_PRIVACY_TEXT}}</a>
+          </p>
+      </div>
+  </div>
+</div>

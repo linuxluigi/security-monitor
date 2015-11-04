@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load i18n staticfiles mezzanine_tags blog_tags %}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title_wrapper%}
+{% endblock %}
+{% block all_content %}
+{% block left_wrapper%}
+{% endblock %}
+
+{% block main_wrapper%}
+
+{% endblock %}
+
+{% block right_wrapper%}
+{% endblock %}
+<div class="row">
+        <div class="col-xs-12">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">{% trans "Foundings List" %} - {{Website.url}}<br>
+                {% trans "Scan:" %} {{Scan.start_scan}} {%if Scan.stop_scan%}<span class="label label-success">{% trans "Finished" %}</span>{% else %}<span class="label label-danger">{% trans "Scan is running now!" %}</span>{%endif%}
+              </h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
+                <tr>
+                  <th>{% trans "URL" %}</th>
+                  <th>{% trans "Finding" %}</th>
+									<th></th>
+                </tr>
+								{% for found in Findings %}
+								<tr>
+									<td>{{found.url}}</td>
+                  <td>
+                    <div class="box box-warning box-solid">
+                      <div class="box-header with-border">
+                        <h3 class="box-title">{{found.plugin_name}}</h3>
+                        <div class="box-tools pull-right">
+                          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                          </button>
+                        </div>
+                        <!-- /.box-tools -->
+                      </div>
+                      <!-- /.box-header -->
+                      <div class="box-body">
+                        {{found.desc}}
+                      </div>
+                      <!-- /.box-body -->
+                    </div>
+                    <!-- /.box -->
+                  </td>
+								</tr>
+								{% endfor %}
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+      </div>
+{% endblock %}

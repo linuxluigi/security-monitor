@@ -1,0 +1,9 @@
+Mezzanine==4.0.1
+django-modeltranslation
+django_compressor
+django_extensions
+w3af_api_client
+django-annoying
+django-allauth
+django-gravatar2
+django-cookie-law
